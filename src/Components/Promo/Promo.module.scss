@@ -1,0 +1,126 @@
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+.container{
+    max-width: 1260px; 
+    margin: auto;
+    display: block;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: 30px;
+}
+
+.promotion_slider {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-image: url(../../../public/assets/promoback.png);
+    
+  
+    .slide {
+      align-items: flex-end;
+      display: flex;
+    //   flex-direction: row;
+    //   align-items: center;
+    //   justify-content: center;
+      width: 100%;
+  
+      .content {
+        margin-top: 110px;
+        flex: 1;
+        margin-left: 60px;
+        margin-bottom: 88px;
+
+         h1{
+          @include h1-title;
+          margin-bottom: 30px;
+           
+        }
+         p{
+           font-family: $font-stolzl;
+           font-size: 18px;
+        }
+        
+        
+
+      }
+
+  
+      .img {
+        
+        height: auto;
+        width: auto;
+
+;
+      }
+    }
+  
+    .slide_btn {
+    
+      margin-left: 20px; 
+      margin-right: 20px; 
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.2);
+      color: white;
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      
+  
+      &:hover {
+        background-color: #b0b0b0;
+      }
+      span{
+        color: black;
+      }
+    }
+  
+    .prev_btn {
+      margin-right: 10px;
+    }
+  
+    .next_btn {
+      margin-left: 10px;
+    }
+  }
+  
+
+
+  
+//   &Circle{
+//     width: 16px;
+//     height: 16px;
+//     border-radius: 50%;
+//     background-color: $orange-color;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     color: #fff;
+//     font-size: 12px;
+//   }
+//   &Quantity{
+//     z-index: 1;
+//   }
+
+
+.carousel{
+  margin-bottom: 60px;
+
+  .title{
+  @include h2-title;
+  margin-bottom: 23px;
+}
+.cards{
+   
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 20px;
+      
+
+}
+
+}

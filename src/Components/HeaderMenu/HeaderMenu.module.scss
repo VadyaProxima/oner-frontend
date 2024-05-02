@@ -1,0 +1,127 @@
+@import '../styles/variables.scss';
+
+.headerMenu {
+    position:relative;
+    z-index: 10;
+    height: 70px;
+    display: flex;
+    // margin-bottom: 46px;
+    background-color:#ffffff;
+    // padding-top:1px;
+    // padding-bottom: 13px;
+    margin-top: 1px;
+}
+
+.wrapper {
+    max-width: 1260px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    
+    
+}
+.button{
+    background-color: $btn-color2;
+    border: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    
+    &Icon {
+        width: 13.33px;
+        height: 13.33px;
+        position: relative;
+        border: 1.5px 0px 0px 0px;
+        opacity: 100%;
+        color: aqua;
+        margin-right: 10px;
+        
+
+    }
+    &Text{
+        color: $font-black-color;
+        font-family: $font-TTCommons;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white-color;
+        }
+  }
+  
+.button_list {
+    display: flex;
+    flex-direction: row;
+    margin: 0; // Удаление стандартных отступов у списка
+    padding: 0; // Удаление стандартных отступов у списка
+    list-style: none; // Удаление стилей списка
+    
+    button {
+      border-radius: 10px;
+      color: $font-black-color;
+      font-size: 16px;
+      background-color: white; // Белый цвет фона
+      padding: 14px 15px 10px 15px; // Внутренние отступы
+      border: none; // Без рамки
+      margin-right: 5px; // Отступ между кнопками
+      cursor: pointer;
+      transition: background-color 0.3s; // Плавное изменение фона при наведении
+      font-family: $font-TTCommons;
+
+      &:last-child {
+        margin-bottom: 0; // Удаление отступа у последней кнопки
+      }
+  
+      &:hover {
+        background-color: $grey-color; // Серый цвет фона при наведении
+      }
+    }
+  }
+  
+.basket{
+    background-color: $grey-color;
+    border: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+
+    &Icon {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        border: 1.5px 0px 0px 0px;
+        opacity: 100%;
+        color: aqua;
+        margin-right: 10px;
+        
+
+    }
+    &Text{
+        margin-right: 10px;
+    }
+
+    &Circle{
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $orange-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 12px;
+    }
+    &Quantity{
+      z-index: 1;
+    }
+  }
+  

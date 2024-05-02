@@ -1,0 +1,16 @@
+@import '~modern-normalize/modern-normalize.css';
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1312px;
+    margin: 0 auto;
+}

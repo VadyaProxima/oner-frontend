@@ -1,0 +1,105 @@
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+.footer{
+    background-color: $footer-color ;
+
+    .container{
+        max-width: 1260px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        align-items: flex-start;
+        border-bottom: 1px #4e4b65 solid;
+    
+    }
+    .container2{
+        max-width: 1260px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 28px;
+        padding-bottom: 28px;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        align-items: flex-start;
+       
+    
+    }
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+
+    h3{
+        @include h3-title;
+        margin-bottom: 20px;
+    }
+    li{
+        margin-bottom: 8px;
+        //styleName: 16/Regular;
+        font-family: $font-TTCommons;
+        color:$grey-color;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+
+    }
+}
+
+.button{
+    background-color: #44405c;
+    border: 1px rgba(255, 255, 255, 0.2) solid;
+    border-radius: 10px;
+    display: flex;
+    padding: 15px 20px 15px 20px;
+    
+    &Icon{
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    &Text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        
+        span{
+            //styleName: 14/Regular;
+            font-family: TT Commons;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+
+        }
+    }
+}
+
+.pay{
+    display: flex;
+    span{
+        margin-right: 18px;
+    }
+    .icons{
+        display: flex;
+    }
+    .icon{
+        margin-right: 10px;
+    }
+}
+
+.oferta_conf{
+    display: flex;
+
+    .oferta{
+        margin-right: 30px;
+    }
+}

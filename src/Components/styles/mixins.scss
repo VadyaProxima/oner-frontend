@@ -1,0 +1,68 @@
+@import 'variables';
+
+@mixin h1-title {
+  color: $white-color;
+  font-size: 40px;
+  font-family: $font-stolzl;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 55px;
+  letter-spacing: 1px;
+}
+
+
+@mixin h2-title {
+  color: $font-black-color;
+  font-size: 24px;
+  font-family: $font-stolzl;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 1px;
+}
+
+@mixin h3-title {
+//styleName: 18/Medium;
+  font-family: $font-TTCommons;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+
+}
+
+@mixin h4-title {
+  color: $black-color;
+  font-size: 24px;
+  font-family: $font-alegreya;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 30px;
+}
+
+@mixin accent {
+  color: $black-color;
+  font-size: 24px;
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+@mixin p-text {
+  color: $black-color;
+  font-size: 14px;
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+@mixin desc-text {
+  color: $desc-color;
+  font-size: 12px;
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}

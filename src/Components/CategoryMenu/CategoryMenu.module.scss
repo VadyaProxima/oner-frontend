@@ -1,0 +1,57 @@
+@import '../styles/variables.scss';
+.container{
+    max-width: 1260px; 
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: 30px;
+}
+
+
+.catrgories{
+    background-color: white;
+    border: 1px solid #ccc;
+    
+    border-radius: 12px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;  
+    cursor: pointer;
+    margin-right: 5px;
+    transition: scale 0.3s ease;
+
+      &:hover{
+        scale: 102%;
+      }
+    &Icon {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        border: 1.5px 0px 0px 0px;
+        opacity: 100%;
+        color: aqua;
+        margin-right: 10px;
+        
+
+    }
+    &Text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 10px;
+        font-family: $font-TTCommons;
+        font-size: 20px;
+        color:$font-black-color;
+       h4{
+        font-size: 20px;
+        font: weight 600px;;
+       } 
+       span{
+        color:  $font-grey-color;
+        font-size: 14px;
+       }
+     
+    }
+  }

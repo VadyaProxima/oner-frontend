@@ -1,0 +1,28 @@
+@import '../styles/mixins.scss';
+
+.container{
+    max-width: 1260px; 
+    margin: auto;
+    margin-top: 103px;
+    display: block;
+    justify-content: space-around
+}
+.carousel{
+    margin-bottom: 60px;
+
+    .title{
+    @include h2-title;
+    margin-bottom: 23px;
+ }
+.cards{
+     
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        
+
+ }
+
+}
+

@@ -1,0 +1,120 @@
+@import '../styles/variables.scss';
+
+
+.header {
+    position:relative;
+    z-index: 10;
+    max-height: 70px;
+   
+    // margin-bottom: 46px;
+    background-color:#ffffff;
+    padding-top:13px;
+    padding-bottom: 13px;
+}
+
+.wrapper {
+    max-width: 1260px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    
+}
+.da{
+    display: flex;
+}
+.logo{
+    position: relative;
+    width: 205.37px;
+    height: 41px;
+    padding: 0;
+    margin-right: 17px;
+    padding: 0;
+}
+.inputContainer {
+    position: relative;
+    display: flex;
+    margin-right: 20px;
+
+}
+.inputField {
+    width: 430px;
+    height: 44px;
+    background-color: $grey-color;
+    border: 1px solid #FFFFFF;
+    color: #000000; 
+    border-radius: 6px;
+    padding: 10px;
+    &::placeholder {
+      color: #808080;
+    }
+  }
+  
+.nav{
+    display: flex;
+}
+
+.geo{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    max-width: 146px;
+
+    &Logo{
+        position: relative;
+        width: 24px;
+        height: 24px;
+
+    }
+
+    &Text{
+    color: $font-black-color;
+    font-family: $font-TTCommons;
+    font-size: 16px;
+    font-weight: 400;
+
+    }
+
+    
+}
+.phone{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+ 
+
+    &Logo{
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+
+    &Text{
+    font-family: $font-TTCommons;
+    font-size: 16px;
+    color: $font-black-color;
+    font-weight: 600;
+    }
+
+}
+
+.user{
+    display: flex;
+    align-items: center;
+   
+
+    &Logo{
+        position: relative;
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+    }
+
+    &Text{
+    font-family: $font-TTCommons;
+    font-size: 16px;
+    color: $font-black-color;
+    
+    }
+
+}
