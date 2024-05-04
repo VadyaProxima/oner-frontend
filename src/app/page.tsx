@@ -10,13 +10,13 @@ import Slide from "@/Components/Promo/Slide";
 export default function Home() {
   return (
     <div>
-    <Header />
+    {/* <Header />
     <HeaderMenu/>
     <PromotionSlider/>
     <CategoryMenu/>
-    
     <Catalog/> 
-    <Footer/>
+    <Footer/>  */}
+    <Slide/>
     </div>
   );
 }
