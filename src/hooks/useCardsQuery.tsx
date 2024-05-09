@@ -1,15 +1,15 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query';
-import { fetchPromos } from '../srvices/fetch';
+import { fetchCards } from '../srvices/fetch';
 
-const usePromosQuery = () => {
+const useCardsQuery = () => {
     return useQuery({   
         // queryFn: () => fetchCategories(),
-        queryFn: fetchPromos,
-        queryKey: ['promo'],
+        queryFn: fetchCards,
+        queryKey: ['product'],
         staleTime: 1000 * 5,
     });
 };
 
-export { usePromosQuery };  
+export { useCardsQuery };  

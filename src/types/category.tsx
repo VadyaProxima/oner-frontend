@@ -1,11 +1,10 @@
-interface PromoItem {
+interface CategoryItem {
     id: number;
+    name: string;
     image: string;
-    title: string;
-    text: string;
 }
 
 // Define an interface for the fetched data structure if necessary
-interface PromoData {
-    promos: PromoItem[];
+interface CategoryItem {
+    categories: CategoryItem[];
 }

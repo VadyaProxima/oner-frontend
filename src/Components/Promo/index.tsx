@@ -7,6 +7,7 @@ import image2 from '../../../public/assets/promopic1.svg';
 import image3 from '../../../public/assets/promopic2.svg';
 import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
 import styles from './Promo.module.scss';
 import Slide from './Slide';
   
@@ -55,16 +56,11 @@ import Slide from './Slide';
     return (
         <div className={styles.container}>
 
-<div className={styles.carousel}>
-                <Carousel responsive={responsive}>
-                    <li><Slide/></li>
-                    <li><Slide/></li>
-                    <li><Slide/></li>
-                </Carousel>
+
+                <Slide/>
                 
             </div>
 
-       </div>
     );
   };
   

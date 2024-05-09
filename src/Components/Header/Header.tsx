@@ -11,7 +11,7 @@ function Header() {
             <div className={`container ${styles.wrapper}`}>
             <div className={styles.da}>
                 <Link href="/" className={styles.logo}>
-                    <Image fill src="/assets/Logo.svg" alt="logo" />
+                    <Image fill src="/assets/logo(1).jpg" alt="logo" />
                 </Link>
                 <div className={styles.inputContainer}>
                     <input 

@@ -17,31 +17,31 @@ export default function Footer() {
           <li> <a href="">Поставщикам</a></li>
           <li> <a href="">Контакты</a></li>
         </ul>
-        <div className={styles.block}>
+        <ul className={styles.block}>
           <h3>Каталоги</h3>
-          <span>Оригинальные запчасти</span>
-          <span>Неоригинальные запчасти</span>
-          <span>Запчасти для ТО</span>
-          <span>Автомасла</span>
-          <span>Аккумуляторы</span>
-          <span>Распродажа</span>
-        </div>
+         <li><a href="">Оригинальные запчасти</a> </li> 
+         <li><a href="">Неоригинальные запчасти</a></li> 
+          <li><a href="">Запчасти для ТО</a></li>
+          <li><a href="">Автомасла</a></li>
+         <li><a href="">Аккумуляторы</a></li> 
+         <li><a href="">Распродажа</a></li> 
+        </ul>
         
-        <div className={styles.block}>
+        <ul className={styles.block}>
           <h3>Помощь</h3>
-          <span>Часто задаваемые вопросы</span>
-          <span>Консультация Online</span>
-          <span>Оплата заказа</span>
-          <span>Доставка заказа</span>
-          <span>Возврат товара</span>
-          <span>Забыл пароль</span>
-        </div>
+         <li><a href="">Часто задаваемые вопросы</a></li> 
+          <li><a href="">Консультация Online</a></li>
+          <li><a href="">Оплата заказа</a></li>
+          <li><a href="">Доставка заказа</a></li>
+          <li><a href="">Возврат товара</a></li>
+          <li><a href="">Забыл пароль</a></li>
+        </ul>
 
         <div className={styles.block}>
           <h3>Товары и бренды</h3>
-          <span>Список брендов</span>
-          <span>Популярные товары</span>
-          <span>Наличие на складах</span>
+          <a href="">Список брендов</a>
+          <a href="">Популярные товары</a>
+          <a href="">Наличие на складах</a>
         </div>
         
         <button className={styles.button}>

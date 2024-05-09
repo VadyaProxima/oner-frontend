@@ -5,18 +5,10 @@ import PromotionSlider from "@/Components/Promo";
 import CategoryMenu from "@/Components/CategoryMenu";
 import Card from "@/Components/Catalog/Card";
 import Catalog from "@/Components/Catalog";
-import Footer from "@/Components/Footer";
-import Slide from "@/Components/Promo/Slide";
 export default function Home() {
   return (
     <div>
-    {/* <Header />
-    <HeaderMenu/>
-    <PromotionSlider/>
-    <CategoryMenu/>
     <Catalog/> 
-    <Footer/>  */}
-    <Slide/>
     </div>
   );
 }

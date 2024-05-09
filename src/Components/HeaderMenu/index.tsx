@@ -4,7 +4,7 @@ import styles from './HeaderMenu.module.scss'
 export default function HeaderMenu() {
     return (
         <header className={styles.headerMenu}>
-            <div className={`container ${styles.wrapper}`}>
+            <div className={styles.wrapper}>
                 <button className={styles.button}>
                     <div className={styles.buttonIcon}>
                         <Image fill src="/assets/tochki.svg" alt="logo" />

@@ -38,6 +38,7 @@
     h3{
         @include h3-title;
         margin-bottom: 20px;
+        color: $white-color;
     }
     li{
         margin-bottom: 8px;
@@ -48,6 +49,11 @@
         font-weight: 400;
         line-height: 20px;
         text-align: left;
+        color: $white-color;
+        a{
+            color: $grey-color;
+            text-decoration: none;
+        }
 
     }
 }

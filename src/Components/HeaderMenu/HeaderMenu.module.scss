@@ -4,7 +4,7 @@
     position:relative;
     z-index: 10;
     height: 70px;
-    display: flex;
+
     // margin-bottom: 46px;
     background-color:#ffffff;
     // padding-top:1px;
@@ -24,13 +24,14 @@
 .button{
     background-color: $btn-color2;
     border: none;
-    padding: 10px;
+    padding: 12px 20px 9px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;  
+    color: rgb(0, 0, 0);  
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-right: 20px;
     border-radius: 8px;
     
     &Icon {
@@ -54,6 +55,7 @@
   }
   
 .button_list {
+  margin-right: 29px;
     display: flex;
     flex-direction: row;
     margin: 0; // Удаление стандартных отступов у списка
@@ -107,6 +109,8 @@
     }
     &Text{
         margin-right: 10px;
+        color: $font-black-color;
+       
     }
 
     &Circle{

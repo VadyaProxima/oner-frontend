@@ -39,14 +39,14 @@
 }
 .inputField {
     width: 430px;
-    height: 44px;
+    height: 30px;
     background-color: $grey-color;
     border: 1px solid #FFFFFF;
     color: #000000; 
     border-radius: 6px;
     padding: 10px;
     &::placeholder {
-      color: #808080;
+      color: rgba(85, 85, 109, 1);
     }
   }
   
