@@ -6,7 +6,7 @@ $font-TTCommons: 'TT Commons';
 
 // Colors
 $font-black-color: #1B1D1F;
-$font-grey-color:rgba(80, 82, 85, 1);
+$font-grey-color:#7A7680;
 $grey-color: rgba(222, 222, 226, 1);
 $white-color: #FFFFFF;
 $orange-color: rgba(251, 96, 25, 1);
@@ -39,5 +39,6 @@ $box-shadow: 0 0px 10px 0 rgb(165 169 176 / 30%);
 $box-shadow-hover: 0 2px 20px 0 rgb(165 169 176 / 100%);
 $delivery-shadow: 0 2px 5px 0 rgb(199 193 168 / 30%);
 
+$border:1px solid #ccc;
 
 $transition: 0.2s ease-in-out;

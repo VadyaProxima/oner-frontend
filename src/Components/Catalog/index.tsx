@@ -2,12 +2,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import style from "../CategoryMenu/CategoryMenu.module.scss";
-import Card from "./Card";
 import styles from "./Catalog.module.scss";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 import { useCategoryQuery } from '@/hooks/useCategoryQuery';
 import { useCardsQuery } from "@/hooks/useCardsQuery";
+
 export default function CatalogWithCategories() {
     const { data: categories, isLoading: categoriesLoading, isSuccess: categoriesSuccess } = useCategoryQuery();
     const { data: cards, isLoading: cardsLoading, isSuccess: cardsSuccess } = useCardsQuery();
@@ -16,17 +14,30 @@ export default function CatalogWithCategories() {
     function handleCategoryClick(categoryId) {
         setSelectedCategory(prev => prev === categoryId ? null : categoryId);
     }
+
+    // Новая функция для сброса выбранной категории
+    function handleShowAllClick() {
+       setSelectedCategory(null);
+    }
+
+    const filteredCards = selectedCategory === null ? cards : cards?.filter(card => card.category.id === selectedCategory);
+
+    // Показывать кнопку "Показать все товары" только если выбрана одна из категорий
+    const showAllButton = selectedCategory !== null ? (
+        <button className={style.catrgories} onClick={handleShowAllClick}><h4 className={style.da}>Показать все товары</h4></button>
+    ) : null;
+
+    const selectedCategoryObj = categories?.find(category => category.id === selectedCategory);
+
     return (
         <div>
             <div className={style.container}>
-            {categories?.map(category => (
-                    <button key={category.id} 
-                    className={style.catrgories}
-                    onClick={() => handleCategoryClick(category.id)}
-                    >
+                <div className={style.gridcategory}>
+                    {categories?.map(category => (
+                    <button key={category.id} className={style.catrgories} onClick={() => handleCategoryClick(category.id)}>
                         <div className={style.catrgoriesIcon}>
                             <Image 
-                                src={category.image.includes('http') ? category.image : `/assets/${category.image}`} 
+                                src={category.image.includes('http') ? category.image : `/assets/${category.image}`}
                                 alt='icon' 
                                 width={35} 
                                 height={35} 
@@ -37,44 +48,47 @@ export default function CatalogWithCategories() {
                             <span>730 товаров</span>
                         </div>
                     </button>
+                    
                 ))}
+                {showAllButton}
+                </div>
+                
             </div>
 
             <div className={styles.container}>
                 <h2 className={styles.title}>
-                    Автомасла
+                    {selectedCategoryObj ? selectedCategoryObj.name : 'Все товары'}
                 </h2>
                 <div className={styles.list}>
-                {cards?.filter(card => selectedCategory === null || card.category.id === selectedCategory).map(card => (
-                    <div className={styles.product_card} key={card.id}>
-                        <div className={styles.cardItem}>
-                            <div className={styles.product_cardIcon}>
-                                <Image 
-                                    src={card.image.includes('http') ? card.image : `/assets/${card.image}`} 
-                                    alt='icon' 
-                                    width={220} 
-                                    height={220} 
-                                />
-                            </div>
-                            <div className={styles.product_details}>
-                                <div className={styles.title}>{card.name}</div>
-                                <div className={styles.price_basket}>
-                                    <div className={styles.price}>{card.price} ₽</div>
-                                    <div className={styles.product_cardIcon2}>
-                                        <Image 
-                                            width={24} 
-                                            height={24} 
-                                            src="/assets/basket.svg" 
-                                            alt="basket" 
-                                        />
-                                    </div>      
+                    {filteredCards?.map(card => (
+                        <div className={styles.product_card} key={card.id}>
+                                                        <div className={styles.cardItem}>
+                                <div className={styles.product_cardIcon}>
+                                    <Image 
+                                        src={card.image.includes('http') ? card.image : `/assets/${card.image}`} 
+                                        alt='icon' 
+                                        width={220} 
+                                        height={220} 
+                                    />
+                                </div>
+                                <div className={styles.product_details}>
+                                    <div className={styles.title}>{card.name}</div>
+                                    <div className={styles.price_basket}>
+                                        <div className={styles.price}>{card.price} ₽</div>
+                                        <div className={styles.product_cardIcon2}>
+                                            <Image 
+                                                width={24} 
+                                                height={24} 
+                                                src="/assets/basket.svg" 
+                                                alt="basket" 
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
                 </div>
-                
             </div>
         </div>
     );

@@ -7,6 +7,7 @@ import Footer from "@/Components/Footer";
 import Header from "@/Components/Header/Header";
 import ReactQueryProvider from '@/providers/react-query';
 const queryClient = new QueryClient();
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -16,11 +17,11 @@ export default function RootLayout({
         
         <html lang="ru" >
             <body className="wrapper">
-                <ReactQueryProvider >
+                <ReactQueryProvider>
                     <Header />
                     <main>{children}</main>
-                    <Footer />
-                </ReactQueryProvider>
+                    {/* <Footer /> */}
+                </ReactQueryProvider>       
             </body> 
         </html>
     );

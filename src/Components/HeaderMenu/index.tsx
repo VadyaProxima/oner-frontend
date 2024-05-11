@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import styles from './HeaderMenu.module.scss'
+import Link from 'next/link';
+import PromotionSlider from "@/Components/Promo"; 
 export default function HeaderMenu() {
     return (
         <header className={styles.headerMenu}>
@@ -13,6 +15,7 @@ export default function HeaderMenu() {
                 </button>
 
                 <ul className={styles.button_list}>
+                  
                   <button>Запчасти для ТО</button>
                   <button>Автомасла</button>
                   <button>Оригинальные запчасти</button>
@@ -20,8 +23,8 @@ export default function HeaderMenu() {
                   <button>Лампочки</button>
                   <button>Аккумуляторы</button>
                 </ul>
-
-                <button className={styles.basket}>
+                <Link href='/basket'>
+                 <button className={styles.basket}>
                     <div className={styles.basketIcon}>
                         <Image fill src="/assets/basket.svg" alt="logo" />
                     </div>
@@ -30,6 +33,8 @@ export default function HeaderMenu() {
                     <span className={styles.basketQuantity}>5</span>
                     </div>
                 </button>
+                </Link>
+               
 
 
             </div>
