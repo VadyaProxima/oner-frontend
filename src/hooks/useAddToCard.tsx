@@ -1,4 +1,4 @@
-
+'use client'
 import { useMutation } from '@tanstack/react-query';
 import { addToCart } from '../srvices/fetch';
 
