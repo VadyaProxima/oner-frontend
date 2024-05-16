@@ -15,28 +15,12 @@ export default function CatalogWithCategories() {
     const { data: users, isLoading: usersLoading, isSuccess: usersSuccess } = useUserQuery();
     const [selectedCategory, setSelectedCategory] = useState(null);
 
-    // const [isImageAdded, setIsImageAdded] = useState(false);
-    // const [cardStates, setCardStates] = useState({});
-
-    // const { data: cards } = useCardsQuery();
     const addMutation = useAddToCartMutation();
 
     const handleAddToCart = (productId: number) => {
         addMutation.mutate(productId);
     };
-  
-
-
-    // const handleButtonClick = (cardId) => {
-    //   setCardStates(prevState => {
-    //     return {
-    //       ...prevState,
-    //       [cardId]: !prevState[cardId]
-    //     }
-    //   });
-    // };  
-
-        
+    
     function handleCategoryClick(categoryId) {
         setSelectedCategory(prev => prev === categoryId ? null : categoryId);
     }
@@ -74,13 +58,10 @@ export default function CatalogWithCategories() {
                             <span>730 товаров</span>
                         </div>
                     </button>
-                    
                 ))}
                 {showAllButton}
-                </div>
-                
+                </div>     
             </div>
-
             <div className={styles.container}>
                 <h2 className={styles.title}>
                     {selectedCategoryObj ? selectedCategoryObj.name : 'Все товары'}
@@ -109,10 +90,7 @@ export default function CatalogWithCategories() {
                                                     height={40} 
                                                     src="/assets/basket.svg" 
                                                     alt="basket" 
-                                                />
-                                           
-                                                
-                                           
+                                                />            
                                         </button>
                                     </div>
                                 </div>
