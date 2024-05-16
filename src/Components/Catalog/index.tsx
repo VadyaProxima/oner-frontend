@@ -5,7 +5,7 @@ import style from "../CategoryMenu/CategoryMenu.module.scss";
 import styles from "./Catalog.module.scss";
 import { useCategoryQuery } from '@/hooks/useCategoryQuery';
 import { useCardsQuery } from "@/hooks/useCardsQuery";
-import useAddToCartMutation from "../../hooks/useAddToCard"; // Опечатка в имени файла
+import useAddToCartMutation from "../../hooks/useAddToCard"; 
 import { useUserQuery } from '@/hooks/UseUsersQuery';
 
 export default function CatalogWithCategories() {
