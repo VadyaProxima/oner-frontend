@@ -3,6 +3,7 @@ import styles from "./basket.module.scss"
 import React, { useState } from 'react';
 import Image from 'next/image';
 export default function Basket(){
+    
 
         const [count, setCount] = useState(0);
       
@@ -15,10 +16,12 @@ export default function Basket(){
             setCount((prevCount) => prevCount - 1);
           }
         };
+        
     return (
         <div className={styles.basket}>
             <div className={styles.container}>
                 <h2>Корзина</h2>
+                
                 <div className={styles.sector}>
                     <div className={styles.products}>
                         <div className={styles.checkbox1}>
@@ -36,9 +39,9 @@ export default function Basket(){
                                      <span className={styles.count}>{count}</span>
                                      <button onClick={handleIncrement}><Image className={styles.incrdecr} width={20} height={20} src="/assets/plus.svg" alt="logo" /></button>
                                      </div>
-                                   <span className={styles.priceofine}>1шт=2060р</span>  
+                                   <span className={styles.priceofone}>цена за единицу товара</span>  
                                 </div>
-                             <h2 className={styles.price}>2060 ₽</h2>
+                             <h2 className={styles.price}>еденица товара*количество</h2>
                              <button className={styles.deletebutton}>
                              <Image className={styles.img2} width={20} height={20} src="/assets/deleteitem.svg" alt="logo" />
                              </button>
@@ -54,7 +57,7 @@ export default function Basket(){
                             <div className={styles.sector22}>
                                 <div className={styles.tovari}>
                                 <h2>Товары</h2>
-                                <h2>6</h2> 
+                                <h2>общее количество товаров</h2> 
                                 </div>
                                 
                                 <div className={styles.input_with_arrow_button}>
@@ -69,7 +72,7 @@ export default function Basket(){
                             <div className={styles.sector22}>
                                 <div className={styles.tovari}>
                                 <h2>Итого</h2>
-                                <h2>23 870 ₽</h2> 
+                                <h2>общая стоимость всех товаров в корзине</h2> 
                                 </div>
                                 
                                 <button className={styles.oformbtn}>
@@ -82,7 +85,6 @@ export default function Basket(){
                         
                     </div>
                 </div>
-
             </div>
         </div>
 

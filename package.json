@@ -16,12 +16,15 @@
     "react-dom": "^18",
     "react-multi-carousel": "^2.8.5",
     "react-query": "^3.39.3",
-    "sass": "^1.75.0"
+    "react-slick": "^0.30.2",
+    "sass": "^1.75.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-slick": "^0.23.13",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",

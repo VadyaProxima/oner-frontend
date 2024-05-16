@@ -4,6 +4,8 @@ import styles from './HeaderMenu.module.scss'
 import Link from 'next/link';
 import PromotionSlider from "@/Components/Promo"; 
 export default function HeaderMenu() {
+
+    
     return (
         <header className={styles.headerMenu}>
             <div className={styles.wrapper}>
@@ -26,7 +28,7 @@ export default function HeaderMenu() {
                 <Link href='/basket'>
                  <button className={styles.basket}>
                     <div className={styles.basketIcon}>
-                        <Image fill src="/assets/basket.svg" alt="logo" />
+                        <Image fill src="/assets/basket1.svg" alt="logo" />
                     </div>
                     <div className={styles.basketText}>Корзина</div>
                     <div className={styles.basketCircle}>

@@ -54,14 +54,17 @@ import Slide from './Slide';
   
   export default function PromotionSlide() {
     return (
-        <div className={styles.container}>
+      <>
+      <section className={styles.container}>
+        <div>
+          <Slide/>
+        </div>
+      </section>
+    </>
+    )
 
 
-                <Slide/>
-                
-            </div>
-
-    );
+   
   };
   
   

@@ -5,12 +5,38 @@ import style from "../CategoryMenu/CategoryMenu.module.scss";
 import styles from "./Catalog.module.scss";
 import { useCategoryQuery } from '@/hooks/useCategoryQuery';
 import { useCardsQuery } from "@/hooks/useCardsQuery";
+import useAddToCartMutation from "../../hooks/useAddToCard"; // Опечатка в имени файла
+import { useUserQuery } from '@/hooks/UseUsersQuery';
 
 export default function CatalogWithCategories() {
+    
     const { data: categories, isLoading: categoriesLoading, isSuccess: categoriesSuccess } = useCategoryQuery();
     const { data: cards, isLoading: cardsLoading, isSuccess: cardsSuccess } = useCardsQuery();
+    const { data: users, isLoading: usersLoading, isSuccess: usersSuccess } = useUserQuery();
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    // const [isImageAdded, setIsImageAdded] = useState(false);
+    // const [cardStates, setCardStates] = useState({});
+
+    // const { data: cards } = useCardsQuery();
+    const addMutation = useAddToCartMutation();
+
+    const handleAddToCart = (productId: number) => {
+        addMutation.mutate(productId);
+    };
+  
+
+
+    // const handleButtonClick = (cardId) => {
+    //   setCardStates(prevState => {
+    //     return {
+    //       ...prevState,
+    //       [cardId]: !prevState[cardId]
+    //     }
+    //   });
+    // };  
+
+        
     function handleCategoryClick(categoryId) {
         setSelectedCategory(prev => prev === categoryId ? null : categoryId);
     }
@@ -75,14 +101,19 @@ export default function CatalogWithCategories() {
                                     <div className={styles.title}>{card.name}</div>
                                     <div className={styles.price_basket}>
                                         <div className={styles.price}>{card.price} ₽</div>
-                                        <div className={styles.product_cardIcon2}>
-                                            <Image 
-                                                width={24} 
-                                                height={24} 
-                                                src="/assets/basket.svg" 
-                                                alt="basket" 
-                                            />
-                                        </div>
+                                        <button
+                                         onClick={() => handleAddToCart(card.id)}
+                                         className={styles.product_cardIcon2}>
+                                               <Image 
+                                                    width={40} 
+                                                    height={40} 
+                                                    src="/assets/basket.svg" 
+                                                    alt="basket" 
+                                                />
+                                           
+                                                
+                                           
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -93,3 +124,7 @@ export default function CatalogWithCategories() {
         </div>
     );
 }
+
+
+
+

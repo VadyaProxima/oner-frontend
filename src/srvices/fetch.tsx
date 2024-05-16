@@ -27,3 +27,27 @@ export async function fetchCategory(): Promise<Category[]> {
     if (!res.ok) throw new Error('Ошибка загрузки категрии')
     return res.json()
 }
+
+export async function fetchUser(): Promise<User[]> {
+    
+    const res = await fetch(`${BASE}/users`,{}
+    )
+    if (!res.ok) throw new Error('Ошибка загрузки пользователя')
+    return res.json()
+}
+
+
+export async function addToCart(productId: number) {
+    const response = await fetch(`${BASE}/cart/CartController_create`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ productId }),
+    });
+
+    if (!response.ok) {
+        throw new Error('Ошибка добавления товара в корзину');
+    }
+    return response.json();
+}
