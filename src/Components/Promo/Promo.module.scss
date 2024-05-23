@@ -7,6 +7,27 @@
     align-items: center;
     
     margin-top: 30px;
+    @media (max-width: 1260px) { 
+      max-width: 1080px;
+    }
+    @media (max-width: 1080px) { 
+      max-width: 768px;
+    }
+    @media (max-width: 768px) { 
+      max-width: 540px;
+    }
+    @media (max-width: 540px) { 
+      max-width: 436px;
+      
+    }
+    @media (max-width: 436px) { 
+      max-width: 375px;
+      
+    }
+
+    @media (max-width: 375px) { 
+      max-width: 310px;
+    }
 }
 
 .promotion_slider {
@@ -27,16 +48,77 @@
         flex: 1;
         margin-left: 60px;
         margin-bottom: 88px;
+        @media (max-width: 1080px) { 
+            
+        margin-top: 50px;
+        flex: 1;
+        margin-left: 30px;
+        margin-bottom: 44px;
+          
+        }
+        @media (max-width: 436px) { 
+   
+         margin-top: 20px;
+        flex: 1;
+        margin-left: 20px;
+        margin-bottom: 20px;
+          
+        }
+        @media (max-width: 375px) { 
+          margin-top: 10px;
+          flex: 1;
+          margin-left: 10px;
+          margin-bottom: 20px;
+        }
 
          h1{
           @include h1-title;
           margin-bottom: 30px;
+          @media (max-width: 1080px) { 
+            max-width: 768px;
+            font-size: 32px;
+            line-height: 45px;
+          }
+          @media (max-width: 540px) { 
+   
+            max-width: 768px;
+            font-size:22px;
+            line-height: 22px;
+            margin-bottom: 20px;
+             
+           }
+          @media (max-width: 436px) { 
+   
+            max-width: 768px;
+            font-size: 20px;
+            line-height: 22px;
+            margin-bottom: 20px;
+             
+           }
            
         }
          p{
            font-family: $font-stolzl;
            color: $white-color;
            font-size: 18px;
+           @media (max-width: 1080px) { 
+               font-size: 14px;
+            
+          }
+          @media (max-width: 540px) { 
+   
+            max-width: 768px;
+            font-size: 14px;
+            line-height: 16px;
+             
+           }
+          @media (max-width: 436px) { 
+   
+            max-width: 768px;
+            font-size: 12px;
+            line-height: 16px;
+             
+           }
         }
         
       }
@@ -44,6 +126,24 @@
         
         height: auto;
         width: auto;
+        @media (max-width: 1080px) { 
+          height: 70%;
+          width:50%;
+          position: relative;
+        }
+        
+        @media (max-width: 540px) { 
+          max-width: 436px;
+          height: 60%;
+          width:45%;
+        }
+        @media (max-width: 436px) { 
+   
+          height: 50%;
+          width:45%;
+          position: relative;
+           
+         }
 
       }
     }

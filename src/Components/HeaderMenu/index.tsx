@@ -9,21 +9,32 @@ export default function HeaderMenu() {
     return (
         <header className={styles.headerMenu}>
             <div className={styles.wrapper}>
-                <button className={styles.button}>
+            <button className={styles.button}>
                     <div className={styles.buttonIcon}>
                         <Image fill src="/assets/tochki.svg" alt="logo" />
                     </div>
-                    <div className={styles.buttonText}>Все категории</div>
+                    <div className={styles.buttonText}>
+                        Все категории
+                    </div>
+                    
                 </button>
+
+                <div className={styles.inputContainer}>
+                            <input
+                                type="text"
+                                placeholder="Введите номер запчасти или VIN"
+                                className={styles.inputField} />
+                            {/* <Image fill src="/assets/Search.png" alt="logo" className={styles.searchIcon}/> */}
+                        </div>
 
                 <ul className={styles.button_list}>
                   
-                  <button>Запчасти для ТО</button>
+                  <button >Запчасти для ТО</button>
                   <button>Автомасла</button>
                   <button>Оригинальные запчасти</button>
-                  <button>Неоригинальные запчасти</button>
-                  <button>Лампочки</button>
-                  <button>Аккумуляторы</button>
+                  <button className={styles.adapt}>Неоригинальные запчасти</button>
+                  <button className={styles.adapt}>Лампочки</button>
+                  <button className={styles.adapt}>Аккумуляторы</button>
                 </ul>
                 <Link href='/basket'>
                  <button className={styles.basket}>

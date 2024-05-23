@@ -24,7 +24,7 @@ const Slide: React.FC = () => {
                             className={styles.img} 
                             src={promo.image.includes('http') ? promo.image : `/assets/${promo.image}`} 
                             alt='promopic' 
-                            // layout='fill' 
+                        
                             width={10}
                             height={10}
                         />

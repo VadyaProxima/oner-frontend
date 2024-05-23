@@ -5,104 +5,53 @@ import style from "../CategoryMenu/CategoryMenu.module.scss";
 import styles from "./Catalog.module.scss";
 import { useCategoryQuery } from '@/hooks/useCategoryQuery';
 import { useCardsQuery } from "@/hooks/useCardsQuery";
-import useAddToCartMutation from "../../hooks/useAddToCard"; 
-import { useUserQuery } from '@/hooks/UseUsersQuery';
+
+import { Category } from '@/types/category';
+import CategoryButton from '../CategoryMenu';
+import ProductCard from '../Card/ProductCard';
 
 export default function CatalogWithCategories() {
     
-    const { data: categories, isLoading: categoriesLoading, isSuccess: categoriesSuccess } = useCategoryQuery();
-    const { data: cards, isLoading: cardsLoading, isSuccess: cardsSuccess } = useCardsQuery();
-    const { data: users, isLoading: usersLoading, isSuccess: usersSuccess } = useUserQuery();
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const { data: products } = useCardsQuery();
+    const { data: categories } = useCategoryQuery();
+    const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
 
-    const addMutation = useAddToCartMutation();
+    if (!products || !categories) {
+      return <div>Загрузка категорий...</div>;
+    }
 
-    const handleAddToCart = (productId: number) => {
-        addMutation.mutate(productId);
+    const filteredProducts = selectedCategory
+        ? products.filter((product) => product.category.id === selectedCategory.id)
+        : products;
+
+    const handleResetCategory = () => {
+        setSelectedCategory(null); // Сброс выбранной категории
     };
-    
-    function handleCategoryClick(categoryId) {
-        setSelectedCategory(prev => prev === categoryId ? null : categoryId);
-    }
-
-    // Новая функция для сброса выбранной категории
-    function handleShowAllClick() {
-       setSelectedCategory(null);
-    }
-
-    const filteredCards = selectedCategory === null ? cards : cards?.filter(card => card.category.id === selectedCategory);
-
-    // Показывать кнопку "Показать все товары" только если выбрана одна из категорий
-    const showAllButton = selectedCategory !== null ? (
-        <button className={style.catrgories} onClick={handleShowAllClick}><h4 className={style.da}>Показать все товары</h4></button>
-    ) : null;
-
-    const selectedCategoryObj = categories?.find(category => category.id === selectedCategory);
 
     return (
         <div>
             <div className={style.container}>
                 <div className={style.gridcategory}>
-                    {categories?.map(category => (
-                    <button key={category.id} className={style.catrgories} onClick={() => handleCategoryClick(category.id)}>
-                        <div className={style.catrgoriesIcon}>
-                            <Image 
-                                src={category.image.includes('http') ? category.image : `/assets/${category.image}`}
-                                alt='icon' 
-                                width={35} 
-                                height={35} 
-                            />
-                        </div>
-                        <div className={style.catrgoriesText}>
-                            <h4>{category.name}</h4>
-                            <span>730 товаров</span>
-                        </div>
-                    </button>
-                ))}
-                {showAllButton}
+                {categories.map((category) => (
+                    <CategoryButton key={category.id} category={category} onClick={() => setSelectedCategory(category)} />
+            ) )}
+                {/* Условное отображение кнопки сброса */}
+                {selectedCategory && (
+                    <button className={styles.resetbtn} onClick={handleResetCategory}>Все товары</button>
+                )}
                 </div>     
             </div>
             <div className={styles.container}>
                 <h2 className={styles.title}>
-                    {selectedCategoryObj ? selectedCategoryObj.name : 'Все товары'}
+                    {/* Условие для отображения названия категории или "Все товары" */}
+                    {selectedCategory ? selectedCategory.name : 'Все товары'}
                 </h2>
                 <div className={styles.list}>
-                    {filteredCards?.map(card => (
-                        <div className={styles.product_card} key={card.id}>
-                                                        <div className={styles.cardItem}>
-                                <div className={styles.product_cardIcon}>
-                                    <Image 
-                                        src={card.image.includes('http') ? card.image : `/assets/${card.image}`} 
-                                        alt='icon' 
-                                        width={220} 
-                                        height={220} 
-                                    />
-                                </div>
-                                <div className={styles.product_details}>
-                                    <div className={styles.title}>{card.name}</div>
-                                    <div className={styles.price_basket}>
-                                        <div className={styles.price}>{card.price} ₽</div>
-                                        <button
-                                         onClick={() => handleAddToCart(card.id)}
-                                         className={styles.product_cardIcon2}>
-                                               <Image 
-                                                    width={40} 
-                                                    height={40} 
-                                                    src="/assets/basket.svg" 
-                                                    alt="basket" 
-                                                />            
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                {filteredProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
                 </div>
             </div>
         </div>
     );
 }
-
-
-
-

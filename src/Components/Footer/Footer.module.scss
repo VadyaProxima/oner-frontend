@@ -2,8 +2,13 @@
 @import '../styles/mixins.scss';
 .footer{
     background-color: $footer-color ;
-
-    .container{
+    width: 100%;
+    position: relative;
+    @media (max-width: 436px) { 
+        display: none;
+        
+       }
+    .container{ 
         max-width: 1260px;
         margin-right: auto;
         margin-left: auto;
@@ -14,8 +19,38 @@
         justify-content:space-between;
         align-items: flex-start;
         border-bottom: 1px #4e4b65 solid;
+        @media (max-width: 1260px) { 
+            max-width: 1080px;
+          }
+          @media (max-width: 1080px) { 
+            max-width: 768px;
+           }
+           @media (max-width: 768px) { 
+            max-width: 540px;
+            
+          }
+          @media (max-width: 540px) { 
+            max-width: 436px;
+            flex-direction: column;
+          }
+           @media (max-width: 436px) { 
+            max-width: 375px;
+            display: flex;
+            flex-direction: column;
+            
+           }
     
     }
+    .button{
+        @media (max-width: 436px) { 
+            align-items: flex-start;
+            width: 100%;
+            
+            
+           }
+    }
+
+
     .container2{
         max-width: 1260px;
         margin-right: auto;
@@ -26,19 +61,31 @@
         align-items: center;
         justify-content:space-between;
         align-items: flex-start;
-       
+        @media (max-width: 1260px) { 
+            max-width: 1080px;
+          }
+          @media (max-width: 1080px) { 
+            max-width: 768px;
+           }
+        span{
+            font-family: $font-TTCommons;
+            color: white;
+        }
     
     }
 }
-
-.block{
+.blocks{
+    display: flex;
+}
+.block, .blockdel{
     display: flex;
     flex-direction: column;
-
+    margin-right: 8px;
     h3{
         @include h3-title;
         margin-bottom: 20px;
         color: $white-color;
+        text-align: left;
     }
     li{
         margin-bottom: 8px;
@@ -50,6 +97,8 @@
         line-height: 20px;
         text-align: left;
         color: $white-color;
+        text-decoration: none;
+        
         a{
             color: $grey-color;
             text-decoration: none;
@@ -57,14 +106,21 @@
 
     }
 }
-
+.blockdel{
+    @media (max-width: 1080px) { 
+        display: none;
+      }
+}
 .button{
     background-color: #44405c;
     border: 1px rgba(255, 255, 255, 0.2) solid;
     border-radius: 10px;
     display: flex;
     padding: 15px 20px 15px 20px;
-    
+    color: white;
+    @media (max-width: 768px) { 
+        display: none;
+      }
     &Icon{
         position: relative;
         width: 20px;
@@ -84,15 +140,77 @@
             font-weight: 400;
             line-height: 18px;
             text-align: left;
+            margin-top: 5px;
 
         }
     }
 }
+.button1{
+    background-color: #44405c;
+    border: 1px rgba(255, 255, 255, 0.2) solid;
+    border-radius: 10px;
+    display: flex;
+    padding: 15px 20px 15px 20px;
+    color: white;
+    @media (min-width: 540px) { 
+       margin-top: 20px;
+      }
+    &Icon{
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
 
+    &Text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        
+        span{
+            //styleName: 14/Regular;
+            font-family: $font-TTCommons;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: left;
+            margin-top: 5px;
+
+        }
+    }
+}
+.container23{
+    max-width: 1260px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 28px;
+        padding-bottom: 28px;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        @media (max-width: 1260px) { 
+            max-width: 1080px;
+          }
+          @media (max-width: 1080px) { 
+            max-width: 768px;
+           }
+        span{
+            margin-right: 18px;
+            font-family: $font-TTCommons;
+            color: white;
+        }
+        
+}
 .pay{
     display: flex;
+    font-family: $font-TTCommons;
+    color: white;
+    align-items: center;
+    
     span{
         margin-right: 18px;
+        font-family: $font-TTCommons;
+        color: white;
     }
     .icons{
         display: flex;
@@ -104,8 +222,15 @@
 
 .oferta_conf{
     display: flex;
+    font-family: $font-TTCommons;
+    color: white;
 
     .oferta{
         margin-right: 30px;
+        font-family: $font-TTCommons;
+    color: white;
     }
+    @media (max-width: 1080px) { 
+       display: none;
+      }
 }

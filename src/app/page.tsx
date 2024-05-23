@@ -8,7 +8,7 @@ import Catalog from "@/Components/Catalog";
 export default function Home() {
   return (
     <div>
-    <HeaderMenu/>
+    {/* <HeaderMenu/> */}
     <PromotionSlider/>
     <Catalog/> 
     </div>

@@ -6,6 +6,8 @@ import { Roboto } from 'next/font/google';
 import Footer from "@/Components/Footer";
 import Header from "@/Components/Header/Header";
 import ReactQueryProvider from '@/providers/react-query';
+import HeaderMenu from '@/Components/HeaderMenu';
+import { FooterFull } from '@/Components/Footer/Footer';
 const queryClient = new QueryClient();
 export default function RootLayout({
     children,
@@ -18,8 +20,9 @@ export default function RootLayout({
             <body className="wrapper">
                 <ReactQueryProvider >
                     <Header />
+                    <HeaderMenu />
                     <main>{children}</main>
-                    {/* <Footer /> */}
+                    <FooterFull/>
                 </ReactQueryProvider>       
             </body> 
         </html>

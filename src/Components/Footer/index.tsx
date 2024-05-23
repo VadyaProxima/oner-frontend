@@ -7,7 +7,10 @@ export default function Footer() {
 
   return (
     <div className={styles.footer}>
-      <div className={styles.container}>
+   <div className={styles.container}>   
+      <div style={{display:'flex', justifyContent:'space-between'}} >
+
+       
         <ul className={styles.block}>
           <h3>Меню компании</h3>
           <li> <a href="">Что такое Oner</a></li>
@@ -27,7 +30,15 @@ export default function Footer() {
          <li><a href="">Распродажа</a></li> 
         </ul>
         
+        
+
         <ul className={styles.block}>
+          <h3>Помощь</h3>
+         <li><a href="">Список брендов</a></li> 
+          <li><a href="">Популярные товары</a></li>
+          <li><a href="">Наличие на складах</a></li>
+        </ul>
+        <ul className={styles.blockdel}>
           <h3>Помощь</h3>
          <li><a href="">Часто задаваемые вопросы</a></li> 
           <li><a href="">Консультация Online</a></li>
@@ -36,15 +47,13 @@ export default function Footer() {
           <li><a href="">Возврат товара</a></li>
           <li><a href="">Забыл пароль</a></li>
         </ul>
-
-        <div className={styles.block}>
-          <h3>Товары и бренды</h3>
-          <a href="">Список брендов</a>
-          <a href="">Популярные товары</a>
-          <a href="">Наличие на складах</a>
-        </div>
         
-        <button className={styles.button}>
+
+
+      </div>
+      
+
+          <button className={styles.button1}>
                     <div className={styles.buttonIcon}>
                         <Image fill src="/assets/comment.svg" alt="logo" />
                     </div>
@@ -53,11 +62,11 @@ export default function Footer() {
                       <span>Задавайте вопросы</span>
                     </div>
                 </button>
-
-
-          
       </div>
-      <div className={styles.container2}>
+      
+               
+
+      <div className={styles.container23}>
           <span>Copyright © ООО «Oner.ru» 2021. All rights reserved.</span>
           <div className={styles.pay}>
             <span>Принимаем к оплате</span>

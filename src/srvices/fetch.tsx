@@ -29,17 +29,17 @@ export async function fetchCategory(): Promise<Category[]> {
     return res.json()
 }
 
-export async function fetchUser(): Promise<User[]> {
+// export async function fetchUser(): Promise<User[]> {
     
-    const res = await fetch(`${BASE}/users`,{}
-    )
-    if (!res.ok) throw new Error('Ошибка загрузки пользователя')
-    return res.json()
-}
+//     const res = await fetch(`${BASE}/users`,{}
+//     )
+//     if (!res.ok) throw new Error('Ошибка загрузки пользователя')
+//     return res.json()
+// }
 
 
 export async function addToCart(productId: number) {
-    const response = await fetch(`${BASE}/cart/CartController_create`, {
+    const response = await fetch(`${BASE}/cart`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

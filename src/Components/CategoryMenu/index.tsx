@@ -3,32 +3,37 @@ import React from 'react'
 import Image from 'next/image';
 import style from "./CategoryMenu.module.scss"
 import { useCategoryQuery } from '@/hooks/useCategoryQuery';
-export default function CategoryMenu() {
-    const { data, isLoading, isSuccess } = useCategoryQuery();
-    console.log(data)
+import { Category } from '@/types/category';
+
+interface CategoryButtonProps {
+    category: Category;
+    onClick: (category: Category) => void;
+  }
+  
+  const CategoryButton: React.FC<CategoryButtonProps> = ({ category, onClick }) => {
     return (
-        <div className={style.container}>
+        
 
+            
 
-            {data?.map(category => (
-                <button key={category.id} className={style.catrgories}>
-                    <div className={style.catrgoriesIcon}>
+            <button key={category.id} className={style.catrgories} onClick={() => onClick(category)}>
+                <div className={style.catrgoriesIcon}>
                     <Image 
-                src={category.image.includes('http') ? category.image : `/assets/${category.image}`} 
-                alt='icon' 
-                width={35} 
-                height={35} 
-            />
-                    </div>
-                    <div className={style.catrgoriesText}>
-                        <h4>{category.name}</h4>
-                        <span>730 товаров</span>
-                    </div>
-                    
-                </button>
-))} 
-
-                
-        </div>
-  )
-}
+                        src={category.image.includes('http') ? category.image : `/assets/${category.image}`}
+                        alt='icon' 
+                        width={48} 
+                        height={48} 
+                    />
+                </div>
+                <div className={style.catrgoriesText}>
+                    <h4>{category.name}</h4>    
+                    <span>730 товаров</span>
+                </div>
+            </button>
+       
+      
+        
+    );
+  };
+  
+  export default CategoryButton;

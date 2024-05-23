@@ -1,3 +1,4 @@
+@import '../../Components/styles/variables.scss';
 h1,
 h2,
 h3,
@@ -10,9 +11,11 @@ p {
 }
 
 html, body {
+  margin: 0;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  background: $grey-color2;
 }
 
 a {
@@ -24,4 +27,7 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+input{
+  margin: 0px 0px 0px 0px;
 }

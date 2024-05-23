@@ -29,9 +29,23 @@ export default function Basket(){
                             <span>Отметить/снять все товары</span>
                         </div>
                         <div className={styles.cards}>
-                             <input type="checkbox" name="" id="" />
+
+                            <div className={styles.impimgtit}>
+                               <input type="checkbox" name="" id="" />
                              <Image width={80} height={80} src="/assets/maslo.svg" alt="logo" />
-                             <span className={styles.card_name}>название товара</span>
+
+                             <div className={styles.cardinf}>
+                                <span className={styles.card_name}>название товара</span> 
+                                <br />
+                             <span className={styles.card_name}> доп инфа товара инфа товара доп инфа товара
+                             инфа товара</span> 
+                             
+                             </div>
+                             
+                            </div>
+                             
+
+                             <div className={styles.dayscountprice}>
                              <span className={styles.days}>5 дней</span>
                                 <div className={styles.pricecounter}>
                                     <div className={styles.counter}>
@@ -39,12 +53,16 @@ export default function Basket(){
                                      <span className={styles.count}>{count}</span>
                                      <button onClick={handleIncrement}><Image className={styles.incrdecr} width={20} height={20} src="/assets/plus.svg" alt="logo" /></button>
                                      </div>
-                                   <span className={styles.priceofone}>цена за единицу товара</span>  
+                                   <span className={styles.priceofine}>1шт=2060р</span>  
                                 </div>
-                             <h2 className={styles.price}>еденица товара*количество</h2>
+                             <h2 className={styles.price}>2060₽</h2>
+                             
+                             </div>
+                                
                              <button className={styles.deletebutton}>
                              <Image className={styles.img2} width={20} height={20} src="/assets/deleteitem.svg" alt="logo" />
                              </button>
+                             
                         </div>
                     </div>
                     <div className={styles.sector2}>
@@ -57,7 +75,7 @@ export default function Basket(){
                             <div className={styles.sector22}>
                                 <div className={styles.tovari}>
                                 <h2>Товары</h2>
-                                <h2>общее количество товаров</h2> 
+                                <h2>6</h2> 
                                 </div>
                                 
                                 <div className={styles.input_with_arrow_button}>
@@ -72,7 +90,7 @@ export default function Basket(){
                             <div className={styles.sector22}>
                                 <div className={styles.tovari}>
                                 <h2>Итого</h2>
-                                <h2>общая стоимость всех товаров в корзине</h2> 
+                                <h2>23 870 ₽</h2> 
                                 </div>
                                 
                                 <button className={styles.oformbtn}>

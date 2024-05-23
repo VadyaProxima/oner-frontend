@@ -29,14 +29,23 @@
   line-height: 22px;
   text-align: left;
 }
-
+@mixin label {
+  //styleName: 18/Medium;
+    font-family: $font-TTCommons;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: center;
+    color: $font-black-color;
+  }
 @mixin h4-title {
-  color: $black-color;
-  font-size: 24px;
-  font-family: $font-alegreya;
+  
+  font-size: 18px;
+  font-family: $font-TTCommons;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 30px;
+  
 }
 
 @mixin accent {

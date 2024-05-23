@@ -6,14 +6,41 @@
     align-items: center;
     justify-content:space-between;
     margin-top: 30px;
+    @media (max-width: 1260px) { 
+      max-width: 1080px;
+    }
+    @media (max-width: 1080px) { 
+      max-width: 768px;
+    }
+    @media (max-width: 768px) { 
+      max-width: 540px;
+    }
+    @media (max-width: 540px) { 
+      max-width: 436px;
+      
+    }
+    @media (max-width: 436px) { 
+      max-width: 375px;
+      
+    }
+    @media (max-width: 375px) { 
+      max-width: 310px;
+    }
 }
 .gridcategory{
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+ 
   
-  gap: 5px;
+  gap: 1px;
   height: 100%;
+  @media (max-width: 1260px) { 
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 436px) { 
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
   
 }
 .da{
@@ -24,31 +51,54 @@
   font-family: $font-TTCommons;
   font-size: 20px;
   color:$font-black-color;
-}
-.catrgories{
-    background-color: white;
-    border: 1px solid #ccc;
+  @media (max-width: 436px) { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center
     
-    border-radius: 12px;
+    
+  }
+}
+.catrgories, .da1{
+    background-color: white;
+    border: 0.1px solid $grey-color2;
+    
+    // border-radius: 12px;
     width: 100%;
     padding: 10px;
     display: flex;
+    
     align-items: center;  
     cursor: pointer;
     margin-right: 5px;
     transition: scale 0.3s ease;
+   
+    @media (max-width: 436px) { 
+      flex-direction: column;
+      align-items: flex-start;
+      
+      
+    }
 
       &:hover{
-        scale: 102%;
+        scale: 101%;
       }
     &Icon {
-        width: 32px;
-        height: 32px;
+        width: 48px;
+        height: 48px;
         position: relative;
         border: 1.5px 0px 0px 0px;
         opacity: 100%;
         color: aqua;
         margin-right: 10px;
+        Image{
+          @media (max-width: 436px) { 
+          width: 40px;
+          height: 40px;
+          
+        }
+        }
         
 
     }
@@ -60,14 +110,33 @@
         font-family: $font-TTCommons;
         font-size: 20px;
         color:$font-black-color;
+        padding: 26px 0px ;
+        @media (max-width: 1080px) { 
+          padding: 10px 0px ;
+          
+        }
+        @media (max-width: 436px) { 
+          padding: 6px 0px ;
+          
+        }
        h4{
         font-size: 20px;
         font: weight 600px;;
        } 
        span{
+        margin-top: 5px;
         color:  $font-grey-color;
         font-size: 14px;
        }
      
     }
   }
+
+.da1{
+  @media (max-width: 436px) { 
+   display: flex;
+   align-items: center;
+   justify-content: center
+    
+  }
+}

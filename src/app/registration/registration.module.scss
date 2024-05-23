@@ -1,0 +1,95 @@
+@import '../../Components/styles/mixins.scss';
+@import '../../Components/styles/variables.scss';
+
+.container{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    align-items: center;
+    box-shadow: 0px 0px 36px rgba(110, 21, 21, 0.107);
+    width: 500px;
+    border-radius: 10px;
+    
+      @media (max-width: 768px) { 
+        width:480px;
+      }
+      @media (max-width: 540px) { 
+        width: 436px;
+        
+      }
+      @media (max-width: 436px) { 
+        width: 375px;
+       
+      }
+      @media (max-width: 375px) { 
+        width: 310px;
+      }
+    
+    h1{
+        @include h1-title;
+        color: $font-black-color;
+        padding: 20px 0px;
+        border-bottom: solid 2px $grey-color2;
+        width: 100%;
+        text-align: center;
+    }
+    .unput_box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 0px;
+
+        .radio_text{
+            display: flex;
+            align-items: center;
+            scale: 120%;
+        }
+        label{
+            margin-left: 4px;
+            @include label;
+        }
+    }
+    
+    .input_text{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+
+        input{
+            width: auto;
+            height: 48px;
+            border: solid $grey-color2 2px;
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+        button{
+            @include h4-title;
+            margin-top: -2px;
+            height: 48px;
+            background-color: $btn-color2;
+            border-radius: 10px;
+            color: white;
+            border: none;
+            margin-bottom:20px ;
+            
+        }
+
+    }
+    .text{
+        text-align: center;
+        padding: 20px 0px;
+        font-family: $font-TTCommons;
+        
+    }
+}
