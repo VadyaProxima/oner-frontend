@@ -1,6 +1,6 @@
 import { Cart } from '../types/cart';
-export const addToCart = async (productId: number, quantity: number, price: number, image: string, name: string) => {
-  const userId = 1;
+export const addToCart = async (userId: number, productId: number, quantity: number, price: number, image: string, name: string) => {
+
   const cartData: Omit<Cart, 'id'> = { userId, productId, quantity, price, name, image };
 
   try {

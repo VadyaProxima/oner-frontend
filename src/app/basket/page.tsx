@@ -103,6 +103,7 @@ export default function Basket(){
                                     <h2 className={styles.price}>{cart.price * cart.quantity}</h2>
 
                                 </div>
+                                
                                 {/* КНОПКА ДЛЯ УДАЛЕНИЯ */}
                                 <button  onClick={() => handleDelete(cart.id)} className={styles.deletebutton}>  
                                     <Image className={styles.img2} width={20} height={20} src="/assets/deleteitem.svg" alt="logo" />
