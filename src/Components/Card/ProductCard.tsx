@@ -10,8 +10,9 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+
   const handleAddToCart = useCallback(async () => {
-    await addToCart(product.id, product.price, product.image, product.name);
+    await addToCart(product.id, 1, product.price, product.name, product.image);
   }, [product]);
 
   if (!product) {

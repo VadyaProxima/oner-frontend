@@ -2,6 +2,7 @@
 import { Promo } from '../types/promo'
 import { Card } from '../types/card'
 import { Category } from '../types/category'
+import { Cart } from '@/types/cart'
 
 const BASE = 'http://localhost:7777/api'
 
@@ -29,13 +30,6 @@ export async function fetchCategory(): Promise<Category[]> {
     return res.json()
 }
 
-// export async function fetchUser(): Promise<User[]> {
-    
-//     const res = await fetch(`${BASE}/users`,{}
-//     )
-//     if (!res.ok) throw new Error('Ошибка загрузки пользователя')
-//     return res.json()
-// }
 
 
 export async function addToCart(productId: number) {
@@ -52,3 +46,9 @@ export async function addToCart(productId: number) {
     }
     return response.json();
 }
+
+export async function fetchCart(): Promise<Cart[]> {
+    const res = await fetch(`${BASE}/cart`);
+    if (!res.ok) throw new Error('Error fetching cart');
+    return res.json();
+  }

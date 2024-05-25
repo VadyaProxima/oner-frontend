@@ -102,7 +102,7 @@
         margin-bottom: 20px;
         }
     .cards{
-        display: flex;
+        // display: flex;
         align-items: center;
         justify-content: space-between;
         border: $border;
@@ -201,9 +201,10 @@
             }
     }
     .deletebutton{
+       
        padding: 0;
-        width:fit-content;
-        height: auto;
+        width:auto;
+        height: fit-content;
        .img2{
         padding: 0px;
     }

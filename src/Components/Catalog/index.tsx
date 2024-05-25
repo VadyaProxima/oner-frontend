@@ -17,7 +17,7 @@ export default function CatalogWithCategories() {
     const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
 
     if (!products || !categories) {
-      return <div>Загрузка категорий...</div>;
+      return <div>Загрузка...</div>;
     }
 
     const filteredProducts = selectedCategory

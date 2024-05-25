@@ -1,7 +1,7 @@
 import { Cart } from '../types/cart';
-export const addToCart = async (productId: number, price: number, image: string, name: string) => {
+export const addToCart = async (productId: number, quantity: number, price: number, image: string, name: string) => {
   const userId = 1;
-  const cartData: Omit<Cart, 'id'> = { userId, productId, price, name, image };
+  const cartData: Omit<Cart, 'id'> = { userId, productId, quantity, price, name, image };
 
   try {
     const response = await fetch('http://127.0.0.1:7777/api/cart', {
