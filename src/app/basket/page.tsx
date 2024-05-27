@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useCart } from '@/hooks/useCart';
 import { Cart } from "../../types/cart";
-import { deleteFromCart } from "@/hooks/deletefromCart";
+import { deleteFromCart } from "@/hooks/deleteFromCart";
 import { updateQuantity } from "@/hooks/updateCart";
 export default function Basket(){
 
@@ -75,7 +75,7 @@ export default function Basket(){
                             <>
                              {/* КЕЙ */}
                             <div key={`${cart.id}-${cart.quantity}`}
-                            
+                            className={styles.listcards}
                              style={{display:'flex', justifyContent:'space-between', width:'100%', alignItems:'center'}}
                              >
                                 <div className={styles.impimgtit}>
@@ -85,8 +85,8 @@ export default function Basket(){
                                 <div className={styles.cardinf}>
                                     <span className={styles.card_name}>{cart.name}</span>
                                     <br />
-                                    <span className={styles.card_name}> доп инфа товара инфа товара доп инфа товара
-                                        инфа товара</span>
+                                    {/* <span className={styles.card_name}> доп инфа товара инфа товара доп инфа товара
+                                        инфа товара</span> */}
 
                                 </div>
 
@@ -103,19 +103,19 @@ export default function Basket(){
                                     <h2 className={styles.price}>{cart.price * cart.quantity}</h2>
 
                                 </div>
-                                
-                                {/* КНОПКА ДЛЯ УДАЛЕНИЯ */}
+                                <div className={styles.deletebutton1}>
+                                  {/* КНОПКА ДЛЯ УДАЛЕНИЯ */}
                                 <button  onClick={() => handleDelete(cart.id)} className={styles.deletebutton}>  
                                     <Image className={styles.img2} width={20} height={20} src="/assets/deleteitem.svg" alt="logo" />
                                 </button>
+                                </div>
+                                
                             </div>
                                 
                                 </>
                          ))}
                             </div> 
-                            
-                          
-                        
+
                         </div>
                         
                     </div>
@@ -128,8 +128,8 @@ export default function Basket(){
                             
                             <div className={styles.sector22}>
                                 <div className={styles.tovari}>
-                                <h2>Товары</h2>
-                                <h2>6</h2> 
+                                {/* <h2>Товары</h2>
+                                <h2>6</h2>  */}
                                 </div>
                                 
                                 <div className={styles.input_with_arrow_button}>
