@@ -1,11 +1,6 @@
-interface PromoItem {
-    id: number;
-    image: string;
-    title: string;
-    text: string;
-}
-
-// Define an interface for the fetched data structure if necessary
-interface PromoData {
-    promos: PromoItem[];
+export type Category = {
+	id: number
+	image: string
+	title: string
+	text: string
 }
