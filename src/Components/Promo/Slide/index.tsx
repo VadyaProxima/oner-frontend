@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { usePromosQuery } from '../../../hooks/usePromosQuery'
 import styles from '../Promo.module.scss'
+import { Promo } from '@/types/promo'
 
 const Slide: React.FC = () => {
 	const { data: promos, isError, isLoading } = usePromosQuery()
@@ -12,7 +13,7 @@ const Slide: React.FC = () => {
 		<div className={styles.container}>
 			<div className={styles.promotion_slider}>
 				{promos &&
-					promos.map((promo: PromoItem) => (
+					promos.map((promo: Promo) => (
 						<div key={promo.id} className={styles.slide}>
 							<div className={styles.content}>
 								<h1>{promo.title}</h1>
