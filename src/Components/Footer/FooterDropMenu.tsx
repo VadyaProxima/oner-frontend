@@ -29,16 +29,16 @@ function FooterDropMenu() {
     moreHelp: false,
   });
 
-  const toggleDropdown = (menu) => {
+  const toggleDropdown = (menu: string) => {
     setIsOpen(prev => ({ ...prev, [menu]: !prev[menu] }));
   };
-  const toggleDropdown1 = (menu1) => {
+  const toggleDropdown1 = (menu1: string) => {
     setIsOpen1(prev1 => ({ ...prev1, [menu1]: !prev1[menu1] }));
   };
-  const toggleDropdown2 = (menu2) => {
+  const toggleDropdown2 = (menu2: string) => {
     setIsOpen2(prev2 => ({ ...prev2, [menu2]: !prev2[menu2] }));
   };
-  const toggleDropdown3 = (menu3) => {
+  const toggleDropdown3 = (menu3: string) => {
     setIsOpen3(prev3 => ({ ...prev3, [menu3]: !prev3[menu3] }));
   };
 
