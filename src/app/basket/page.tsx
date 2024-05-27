@@ -80,7 +80,7 @@ export default function Basket(){
                              >
                                 <div className={styles.impimgtit}>
                                 <input type="checkbox" name="" id="" />
-                                <Image src={cart.image.includes('http') ? cart.image : `/assets/${cart.image}`} height={80} width={80} alt="product_image" className={styles.tableImg} />
+                                <Image style={{padding:'10px'}} src={cart.image.includes('http') ? cart.image : `/assets/${cart.image}`} height={80} width={80} alt="product_image" className={styles.tableImg} />
 
                                 <div className={styles.cardinf}>
                                     <span className={styles.card_name}>{cart.name}</span>
