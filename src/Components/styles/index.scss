@@ -3,14 +3,13 @@
 @import 'variables';
 @import 'mixins';
 
-
 .wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .container {
-    max-width: 1312px;
-    margin: 0 auto;
+	max-width: 1312px;
+	margin: 0 auto;
 }

@@ -1,57 +1,63 @@
 'use client'
-import React, { useState } from 'react';
-import Image from 'next/image';
-import style from "../CategoryMenu/CategoryMenu.module.scss";
-import styles from "./Catalog.module.scss";
-import { useCategoryQuery } from '@/hooks/useCategoryQuery';
-import { useCardsQuery } from "@/hooks/useCardsQuery";
+import { useCardsQuery } from '@/hooks/useCardsQuery'
+import { useCategoryQuery } from '@/hooks/useCategoryQuery'
+import { useState } from 'react'
+import style from '../CategoryMenu/CategoryMenu.module.scss'
+import styles from './Catalog.module.scss'
 
-import { Category } from '@/types/category';
-import CategoryButton from '../CategoryMenu';
-import ProductCard from '../Card/ProductCard';
+import { Category } from '@/types/category'
+import ProductCard from '../Card/ProductCard'
+import CategoryButton from '../CategoryMenu'
 
 export default function CatalogWithCategories() {
-    
-    const { data: products } = useCardsQuery();
-    const { data: categories } = useCategoryQuery();
-    const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
+	const { data: products } = useCardsQuery()
+	const { data: categories } = useCategoryQuery()
+	const [selectedCategory, setSelectedCategory] = useState<Category | null>(
+		null
+	)
 
-    if (!products || !categories) {
-      return <div>Загрузка...</div>;
-    }
+	if (!products || !categories) {
+		return <div>Загрузка...</div>
+	}
 
-    const filteredProducts = selectedCategory
-        ? products.filter((product) => product.category.id === selectedCategory.id)
-        : products;
+	const filteredProducts = selectedCategory
+		? products.filter(product => product.category.id === selectedCategory.id)
+		: products
 
-    const handleResetCategory = () => {
-        setSelectedCategory(null); // Сброс выбранной категории
-    };
+	const handleResetCategory = () => {
+		setSelectedCategory(null) // Сброс выбранной категории
+	}
 
-    return (
-        <div>
-            <div className={style.container}>
-                <div className={style.gridcategory}>
-                {categories.map((category) => (
-                    <CategoryButton key={category.id} category={category} onClick={() => setSelectedCategory(category)} />
-            ) )}
-                {/* Условное отображение кнопки сброса */}
-                {selectedCategory && (
-                    <button className={styles.resetbtn} onClick={handleResetCategory}>Все товары</button>
-                )}
-                </div>     
-            </div>
-            <div className={styles.container}>
-                <h2 className={styles.title}>
-                    {/* Условие для отображения названия категории или "Все товары" */}
-                    {selectedCategory ? selectedCategory.name : 'Все товары'}
-                </h2>
-                <div className={styles.list}>
-                {filteredProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div>
+			<div className={style.container}>
+				<div className={style.gridcategory}>
+					{categories.map(category => (
+						<CategoryButton
+							key={category.id}
+							category={category}
+							onClick={() => setSelectedCategory(category)}
+						/>
+					))}
+					{/* Условное отображение кнопки сброса */}
+					{selectedCategory && (
+						<button className={styles.resetbtn} onClick={handleResetCategory}>
+							Все товары
+						</button>
+					)}
+				</div>
+			</div>
+			<div className={styles.container}>
+				<h2 className={styles.title}>
+					{/* Условие для отображения названия категории или "Все товары" */}
+					{selectedCategory ? selectedCategory.name : 'Все товары'}
+				</h2>
+				<div className={styles.list}>
+					{filteredProducts.map(product => (
+						<ProductCard key={product.id} product={product} />
+					))}
+				</div>
+			</div>
+		</div>
+	)
 }
